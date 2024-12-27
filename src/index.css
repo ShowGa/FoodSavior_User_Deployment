@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color-white: rgb(255, 255, 255);
+  --primary-color-maintheme: rgb(0, 97, 95);
+  --primary-color-secondarytheme: rgb(241, 165, 0);
+  --primary-color-secondarytheme-hover: rgb(230, 153, 0);
+  --secondary-color-light: rgb(249, 243, 240);
+  --highlight-color: rgb(255, 251, 155);
+  --btn-padding: 0.5rem 1rem;
+  --btn-border: 1px solid;
+  --secondary-color-text: rgb(102, 102, 102);
+}
+
+/* ================ HTML Elements ================ */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  min-height: 100vh;
+  /* background-color: var(--primary-color-maintheme); */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header[data-theme="dark"] {
+  background: none;
+  color: var(--primary-color-white);
+}
+
+header[data-theme="light"] {
+  background-color: rgb(249, 243, 240);
+  color: var(--primary-color-maintheme);
+}
+
+header[data-theme="light"] .btn {
+  border: 1px solid var(--primary-color-maintheme);
+}
+
+/* ================ Classes ================ */
+.btn {
+  padding: var(--btn-padding);
+  border: var(--btn-border) var(--primary-color-white);
+}
