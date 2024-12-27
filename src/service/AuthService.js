@@ -1,7 +1,7 @@
-import { data } from "autoprefixer";
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth";
+const backendServerUrl = import.meta.env.VITE_BACKEND_SERVER_URL;
+const API_URL = `${backendServerUrl}/api/auth`;
 
 class AuthService {
   firebaseGoogleOAuth(data) {

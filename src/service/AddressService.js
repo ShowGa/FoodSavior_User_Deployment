@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/address";
+const backendServerUrl = import.meta.env.VITE_BACKEND_SERVER_URL;
+const API_URL = `${backendServerUrl}/api/address`;
 
 class AddressService {
   getAddressByPosition(position) {
