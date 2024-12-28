@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const buttonIconsInfo = [
   // { icon: <RiCompassDiscoverLine />, link: "/discover" },
-  { icon: <RiSearchLine />, link: "/search" },
+  { icon: <RiSearchLine />, link: "/" },
   { icon: <FaShoppingCart />, link: "/orders" },
   { icon: <FaHeart />, link: "/favorite" },
   { icon: <FaUserCircle />, link: "/profile" },
