@@ -7,6 +7,7 @@ import Logobg from "./images/Logobg.png";
 import coverimg from "./images/coverimg.jpg";
 import coverimg2 from "./images/coverimg2.jpg";
 import shoppingModify from "./images/shoppingModify.png";
+import logo15ms from "./images/logo15ms.gif";
 
 export {
   img1,
@@ -18,4 +19,5 @@ export {
   coverimg,
   coverimg2,
   shoppingModify,
+  logo15ms,
 };
