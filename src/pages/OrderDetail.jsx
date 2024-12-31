@@ -36,6 +36,11 @@ const OrderDetail = () => {
   };
 
   const handleCompleteOrder = () => {
+    // check if the order is READY
+    if (orderDetail?.orderStatus !== "READY") {
+      toast.error("商家尚未確認訂單");
+      return;
+    }
     // check if time is up later
     if (!isTimeUp) {
       toast.error("時間還沒到喔!");
@@ -61,7 +66,8 @@ const OrderDetail = () => {
   }, []);
 
   useEffect(() => {
-    if (orderDetail) {
+    // order status had to be READY to execute the countdownTimer
+    if (orderDetail?.orderStatus === "READY") {
       countdownTimer(orderDetail?.pickupStartTime, ref, setIsTimeUp);
     }
   }, [orderDetail]);
@@ -78,7 +84,7 @@ const OrderDetail = () => {
               <img
                 src={orderDetail?.storeLogo}
                 alt=""
-                className="rounded-full object-cover"
+                className="rounded-full object-cover w-full h-full"
               />
             </div>
             <div className="text-center">
@@ -161,9 +167,10 @@ const OrderDetail = () => {
                   ref={ref}
                   onClick={handleCompleteOrder}
                 >
+                  {/*WAITFORCONFIRM text*/}
                   {orderDetail?.orderStatus === "WAITFORCONFIRM" &&
                     orderStatus(orderDetail?.orderStatus)}
-                  00:00:00 後可領取
+                  後可領取
                 </button>
               </div>
             </section>
