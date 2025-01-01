@@ -110,7 +110,7 @@ const PackageDetail = () => {
           {/* make this element horizentally and vertically center in the div */}
           <p className="flex items-center justify-center h-full text-2xl">
             {packageDetail?.isFavorite ? (
-              <FaHeart className="text-white" />
+              <FaHeart className=" text-red-600" />
             ) : (
               <FaRegHeart className="text-white" />
             )}
